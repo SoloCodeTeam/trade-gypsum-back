@@ -7,6 +7,7 @@ const swaggerUi = require("swagger-ui-express");
 const Product = require("./ProductModel/index")
 const port = process.env.PORT || 5000
 //
+app.use(express.json())
 mongoose.connect("mongodb+srv://ibrohimov0:abdulloh_070@cluster0.zbdtj61.mongodb.net/")
 .then(() => {
     console.log("Successful connected to MongoDb")
@@ -39,10 +40,6 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
  *      responses:
  *          "200":
  *              description: A sucessful response
- *  post:
- *      parameters:
- *          name:param1
- *          type: string
  */
 app.get("/api/data", async(req,res) => {
     try {
@@ -53,9 +50,30 @@ app.get("/api/data", async(req,res) => {
         res.status(500).send({status:500,message: error.message})
     }
 })
+/**
+ * @swagger
+ * /api/data:
+ *  post:
+ *      parameters: 
+ *          - in: query
+ *            name: param1
+ *            type: string
+ *            required: true
+ *            schema:
+ *              type: object
+ *              properties: 
+ *                  param1:
+ *                      type: string
+ */
+app.post("/api/data", async (req,res) => {
+    try {
+        const product = await   .create(req.body)
+        console.log(req.body);
+        res.status(200).send({status: 200,data:product})
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({status:500,message: error.message})
+    }
+})
 
-app.post("/api/data", (req,res) => {
-    res.status(200).send("Data posted")
-});
-//
 app.listen(port, () => {console.log(`Server listening on port ${port}`)})
