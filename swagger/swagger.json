@@ -1,0 +1,14 @@
+{
+    "swaggerDefinition": {
+    "info": {
+        "title": "Trade-gypsum Api",
+        "description": "Trade-gypsum Api Information",
+        "version": "1.0.0",
+        "contact": {
+            "name":"SoloCode Team"
+        },
+        "servers": ["http://localhost:5000"]
+    }
+    },
+    "apis":["app.js",".routes/*.js"]
+}

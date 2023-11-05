@@ -2,16 +2,8 @@ const mongoose = require("mongoose")
 
 const productSchema = mongoose.Schema(
     {
-        img:{
+        status:{
             type: String,
-            required: true
-        },
-        title:{
-            type: String,
-            required: true
-        },
-        date:{
-            type: Number,
             required: true
         }
     },
