@@ -8,8 +8,10 @@ const Product = require("./ProductModel/index")
 const port = process.env.PORT || 5000
 const SwaggerOptions = require('./swagger/swagger.json');
 const swaggerDocs = swaggerJsDoc(SwaggerOptions)
+const loginRoute = require("./routes/login")
 
 app.use(express.json())
+app.use('/api', loginRoute);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin",'*');
