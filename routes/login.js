@@ -1,6 +1,6 @@
-const express = require("express");
-const { check } = require('express-validator');
-const router = express.Router();
+// const express = require("express");
+// const { check } = require('express-validator');
+// const router = express.Router();
 
 
 
@@ -97,23 +97,23 @@ const router = express.Router();
 
 
 
-app.get("/api/data", async(req,res) => {
-    try {
-        const product = await Product.find({})
-        res.status(200).send(product)
-    } catch (error) {
-        console.log(error)
-        res.status(500).send({status:500,message: error.message})
-    }
-})
-// 
-app.post("/api/data", async (req,res) => {
-    try {
-        const product = await Product.create(req.body)
-        console.log(req.body);
-        res.status(200).send({status: 200,data:product})
-    } catch (error) {
-        console.log(error)
-        res.status(500).send({status:500,message: error.message})
-    }
-})
+// app.get("/api/data", async(req,res) => {
+//     try {
+//         const product = await Product.find({})
+//         res.status(200).send(product)
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).send({status:500,message: error.message})
+//     }
+// })
+// // 
+// app.post("/api/data", async (req,res) => {
+//     try {
+//         const product = await Product.create(req.body)
+//         console.log(req.body);
+//         res.status(200).send({status: 200,data:product})
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).send({status:500,message: error.message})
+//     }
+// })
