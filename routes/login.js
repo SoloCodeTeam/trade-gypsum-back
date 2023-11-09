@@ -1,51 +1,65 @@
-// const express = require("express");
-// const { check } = require('express-validator');
-// const router = express.Router();
+const express = require("express");
+const { check } = require('express-validator');
+const router = express.Router();
+const loginController = require('../controllers/loginController');
 
-
-
-
-
-//Schema
 /**
  * @swagger
- * components:
- *   schemas:
- *     Login:
- *       type: object
- *       required:
- *         - name
- *         - password
- *       properties:
- *         id:
- *           type: string
- *           description: member id
- *         name:
- *           type: string
- *           description: member name
- *        password:
- *           type: number
- *           description: member password
- *         createdAt:
- *           type: string
- *           format: date
- *           description: The date the data was added
- *       example:
- *         id: d5fE_asz
- *         name: OK
- *         password: 12dafae343efw
- *         createdAt: 2020-03-10T04:05:06.157Z
- */
-//Routes
-/**
- * @swagger
- * /api/data:
+ * /api/login:
  *  get:
- *      description: Use to request all customers
- *      responses:
- *          "200":
- *              description: A sucessful response
+ *    description: Get all the IPs from DB
+ *    produces:
+ *      - application/json
+ *    responses:
+ *      '200':
+ *        description: foods fetched successfully.
  */
+router.get('/login', loginController.getLogin);
+module.exports = router;  
+
+
+
+
+// //Schema
+// /**
+//  * @swagger
+//  * components:
+//  *   schemas:
+//  *     Login:
+//  *       type: object
+//  *       required:
+//  *         - name
+//  *         - password
+//  *       properties:
+//  *         id:
+//  *           type: string
+//  *           description: member id
+//  *         name:
+//  *           type: string
+//  *           description: member name
+//  *        password:
+//  *           type: number
+//  *           description: member password
+//  *         createdAt:
+//  *           type: string
+//  *           format: date
+//  *           description: The date the data was added
+//  *       example:
+//  *         id: d5fE_asz
+//  *         name: OK
+//  *         password: 12dafae343efw
+//  *         createdAt: 2020-03-10T04:05:06.157Z
+//  */
+// //Routes
+// /**
+//  * @swagger
+//  * /api/data:
+//  *  get:
+//  *      description: Use to request all customers
+//  *      responses:
+//  *          "200":
+//  *              description: A sucessful response
+//  */
 
 
 
