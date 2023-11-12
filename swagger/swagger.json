@@ -10,5 +10,5 @@
         "servers": ["http://localhost:5000"]
     }
     },
-    "apis":["app.js",".routes/*.js"]
+    "apis":["app.js","./routes/*.js"]
 }

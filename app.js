@@ -5,7 +5,6 @@ const mongoose = require("mongoose")
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const Product = require("./ProductModel/index")
-const port = process.env.PORT || 5000
 const SwaggerOptions = require('./swagger/swagger.json');
 const swaggerDocs = swaggerJsDoc(SwaggerOptions)
 const loginRoute = require("./routes/login")
