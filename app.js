@@ -38,14 +38,3 @@ mongoose.connect("mongodb+srv://ibrohimov0:abdulloh_070@cluster0.zbdtj61.mongodb
 }).catch(err =>{
     console.log(err)
 })
-
-
-
-//function validateAdmin(admin) {
-    //     const schema = {
-    //         name: Joi.string().min(3).required(),
-    //         age: Joi.number().min(16).required(),
-    //         type: Joi.string().required()
-    //     }
-    //     return Joi.validate(admin, schema)
-    // }
