@@ -1,5 +1,5 @@
 const Product = require('../ProductModel/index')
-const Joi = require("joi")
+const Joi = require("@hapi/joi")
 
 function validateData(data) {
     const schema = {
