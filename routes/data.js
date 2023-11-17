@@ -1,50 +1,54 @@
 const express = require("express");
 const router = express.Router();
-const loginController = require('../controllers/loginController');
+const dataController = require('../controllers/dataController');
 
 /**
  * @swagger
- * /api/login:
+ * /api/data:
  *  get:
  *    tags: 
- *      - login
- *    description: Get all the IPs from DB
+ *      - data
+ *    description: Get all the Data from DB
  *    produces:
  *      - application/json
  *    responses:
  *      '200':
  *        description: data fetched successfully.
  */
-router.get('/login', loginController.getLogin);
+router.get('/data', dataController.getData);
 
 /**
  * @swagger
- * /api/login:
+ * /api/data:
  *  post:
  *    tags: 
- *      - login
- *    description: Use to get login member in DB
+ *      - data
+ *    description: Use to post data in DB
  *    produces:
  *      - application/json
  *    parameters:
  *      - in: body
- *        name: get name
- *        password: get password
- *        description: get member parameters in DB.
+ *        img: get img
+ *        title: get title
+ *        text: get text
+ *        description: post data parameters in DB.
  *        schema:
  *          type: object
  *          required:
- *            - name
- *            - password
+ *            - img
+ *            - title
+ *            - text
  *          properties:
- *            name:
+ *            img:
  *              type: string
- *            password:
+ *            title:
+ *              type: string
+ *            text:
  *              type: string
  *    responses:
  *      '200':
  *        description: successfully.
  */
-router.post('/login', loginController.postLogin);
+router.post('/data', dataController.postData);
 
 module.exports = router;  

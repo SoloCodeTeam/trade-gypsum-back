@@ -7,7 +7,13 @@
         "contact": {
             "name":"SoloCode Team"
         },
-        "servers": ["http://localhost:5000"]
+        "servers": ["http://localhost:5000"],
+        "SecurityDefinitions": {
+            "Bearer": {
+                "type": "apiKey",
+                "name": "Authorization"
+            }
+        }
     }
     },
     "apis":["app.js","./routes/*.js"]

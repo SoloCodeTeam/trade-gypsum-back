@@ -8,7 +8,13 @@ const Product = require("./ProductModel/index")
 const SwaggerOptions = require('./swagger/swagger.json');
 const swaggerDocs = swaggerJsDoc(SwaggerOptions)
 const loginRoute = require("./routes/login")
-
+const dataRoute = require("./routes/data")
+/**
+ * @swagger
+ * tags:
+ *      - name: login
+ *      - name: data
+ */
 app.use(express.json())
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin",'*');
@@ -17,6 +23,7 @@ app.use((req,res,next)=>{
     next();
  }) 
 app.use('/api', loginRoute);
+app.use('/api', dataRoute);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use((error,req,res,next)=>{
     console.log(error);

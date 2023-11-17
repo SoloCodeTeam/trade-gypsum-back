@@ -1,4 +1,3 @@
-const { validationResult } = require('express-validator');
 const Product = require('../ProductModel/index')
 
 exports.getLogin = async(req, res, next) => {
@@ -23,7 +22,7 @@ exports.postLogin = async(req, res, next) => {
         if (data.length > 0) {
             res.status(200).send(data)
         } else {
-            res.status(404).send("Login member not found")  
+            res.status(404).send("Login user not found")  
         }
     }).catch(err => {
         if (!err.statusCode) {
@@ -32,12 +31,5 @@ exports.postLogin = async(req, res, next) => {
         next(err)
         }
     )
+
 }
-
-
-// .try {   
-//     return res.status(200).send()
-// } catch (error) {
-//     console.log(error)
-//     return res.status(500).send({status:500,message: error.message})
-// }
