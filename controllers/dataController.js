@@ -23,6 +23,7 @@ exports.getData = async(req, res, next) => {
 }
 
 exports.postData = async(req, res, next) => {
+    console.log(req.body);
     const {error} = await validateData(req.body)
     if(error) return res.status(400).send({status:400,message:error.details[0].message})
     else {
