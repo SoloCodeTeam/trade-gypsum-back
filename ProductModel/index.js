@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const productSchema = mongoose.Schema(
     {
-        status:{
+        category:{
             type: String,
             required: true
         }

@@ -15,6 +15,36 @@ const loginController = require('../controllers/loginController');
  *        description: foods fetched successfully.
  */
 router.get('/login', loginController.getLogin);
+
+
+
+/**
+ * @swagger
+ * /api/login:
+ *  post:
+ *    description: Use to get login member in DB
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: body
+ *        name: get name
+ *        password: get password
+ *        description: get member parameters in DB.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - loginName
+ *            - loginPassword
+ *          properties:
+ *            loginName:
+ *              type: string
+ *            loginPassword:
+ *              type: string
+ *    responses:
+ *      '200':
+ *        description: successfully.
+ */
+router.post('/login', loginController.postLogin);
 module.exports = router;  
 
 
