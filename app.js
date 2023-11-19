@@ -22,8 +22,7 @@ app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Headers",'Content-Type,Authorization');
     next();
  }) 
-app.use('/api', loginRoute);
-app.use('/api', dataRoute);
+app.use('/api', loginRoute,dataRoute);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use((error,req,res,next)=>{
     console.log(error);
