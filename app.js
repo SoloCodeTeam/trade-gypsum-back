@@ -14,6 +14,7 @@ const dataRoute = require("./routes/data")
  * tags:
  *      - name: login
  *      - name: data
+ *      - name: admin
  */
 app.use(express.json())
 app.use((req,res,next)=>{
