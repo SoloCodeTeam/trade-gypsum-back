@@ -4,19 +4,24 @@ const productSchema = mongoose.Schema(
     {
         category:{
             type: String,
-            required: true
         },
         title:{
             type: String,
-            required: true
         },  
         img:{
             type: String,
-            required: true
         },
         text:{
             type: String,
-            required: true
+        },
+        name:{
+            type: String,
+        },
+        surname:{
+            type: String,
+        },
+        password:{
+            type: String,
         }
     },
     {

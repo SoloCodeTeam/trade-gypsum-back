@@ -9,6 +9,7 @@ const SwaggerOptions = require('./swagger/swagger.json');
 const swaggerDocs = swaggerJsDoc(SwaggerOptions)
 const loginRoute = require("./routes/login")
 const dataRoute = require("./routes/data")
+const adminRoute = require("./routes/admin")
 /**
  * @swagger
  * tags:
@@ -23,7 +24,7 @@ app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Headers",'Content-Type,Authorization');
     next();
  }) 
-app.use('/api', loginRoute,dataRoute);
+app.use('/api', loginRoute,dataRoute,adminRoute);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use((error,req,res,next)=>{
     console.log(error);

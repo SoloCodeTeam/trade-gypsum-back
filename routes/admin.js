@@ -53,7 +53,7 @@ router.post('/admin', adminController.postAdmin);
 
  /**
  * @swagger
- * /api/data/{adminId}:
+ * /api/admin/{adminId}:
  *  put:
  *    tags:
  *      - admin
@@ -65,7 +65,7 @@ router.post('/admin', adminController.postAdmin);
  *        name: adminId
  *      - in : body
  *        name: update name
- *        title: update surname
+ *        surname: update surname
  *        password: update password
  *        description: Update admin in DB.
  *        schema:
@@ -85,11 +85,11 @@ router.post('/admin', adminController.postAdmin);
  *      '200':
  *        description: Admin updated successfully.
  */
- router.put('/data/:adminId', adminController.putAdmin);
+ router.put('/admin/:adminId', adminController.putAdmin);
 
  /**
  * @swagger
- * /api/data/{adminId}:
+ * /api/admin/{adminId}:
  *  delete:
  *    tags:
  *     - admin 
@@ -111,6 +111,6 @@ router.post('/admin', adminController.postAdmin);
  *      '200':
  *        description: Admin removed successfully.
  */
-router.delete('/data/:adminId', adminController.deleteAdmin);
+router.delete('/admin/:adminId', adminController.deleteAdmin);
 
 module.exports = router;  

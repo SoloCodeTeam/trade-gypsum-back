@@ -2,20 +2,20 @@ const express = require("express");
 const router = express.Router();
 const loginController = require('../controllers/loginController');
 
-/**
- * @swagger
- * /api/login:
- *  get:
- *    tags: 
- *      - login
- *    description: Get all the IPs from DB
- *    produces:
- *      - application/json
- *    responses:
- *      '200':
- *        description: data fetched successfully.
- */
-router.get('/login', loginController.getLogin);
+// /**
+//  * @swagger
+//  * /api/login:
+//  *  get:
+//  *    tags: 
+//  *      - login
+//  *    description: Get all the IPs from DB
+//  *    produces:
+//  *      - application/json
+//  *    responses:
+//  *      '200':
+//  *        description: data fetched successfully.
+//  */
+// router.get('/login', loginController.getLogin);
 
 /**
  * @swagger
