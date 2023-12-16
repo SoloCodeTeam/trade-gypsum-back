@@ -23,24 +23,28 @@ router.get('/data', dataController.getData);
  *  post:
  *    tags: 
  *      - data
- *    description: Use to post data in DB
+ *    description: Use to get data in DB
  *    produces:
  *      - application/json
  *    parameters:
- *      - in: body
- *        description: post data parameters in DB.
+ *      - name: title
+ *        in: body
+ *        text: get text
+ *        title: get title
+ *        img: get img
+ *        description: get member parameters in DB.
  *        schema:
  *          type: object
  *          required:
- *              - img
- *              - title
- *              - text
+ *            - text
+ *            - title
+ *            - img
  *          properties:
- *            img:
+ *            text:
  *              type: string
  *            title:
  *              type: string
- *            text:
+ *            img:
  *              type: string
  *    responses:
  *      '200':
@@ -50,39 +54,65 @@ router.post('/data', dataController.postData);
 
  /**
  * @swagger
- * /api/data/{e}:
+ * /api/data/{dataId}:
  *  put:
  *    tags:
  *      - data
- *    description: Used to update data in DB
+ *    description: Use to update data in DB
  *    produces:
  *      - application/json
  *    parameters:
  *      - in: path
- *        name: foodId        
- *      - in: body
- *        title: Update title
- *        description: Update food in DB.
+ *        name: dataId
+ *      - name: title
+ *        in : body
+ *        title: update title
+ *        text: update text
+ *        img: update img
+ *        description: Update data in DB.
  *        schema:
  *          type: object
  *          required:
- *            - foodName
- *            - quantity
+ *            - title 
+ *            - text 
+ *            - img
  *          properties:
- *            foodName:
+ *            title:
  *              type: string
- *            quantity:
+ *            text:
  *              type: string
- *            createTillNow:
- *              type: string
- *            predicted:
- *              type: string
- *            status:
+ *            img:
  *              type: string
  *    responses:
  *      '200':
- *        description: Food item updated successfully.
+ *        description: Data updated successfully.
  */
  router.put('/data/:dataId', dataController.putData);
+
+ /**
+ * @swagger
+ * /api/data/{dataId}:
+ *  delete:
+ *    tags:
+ *     - data 
+ *    description: Removes data item from DB.
+ *    produces:
+ *      - application/json
+ *    parameters:
+ *      - in: path
+ *        name: dataId
+ *        description: Remove data item from DB.
+ *        schema:
+ *          type: string
+ *          required:
+ *            - dataId
+ *          properties:
+ *            dataId:
+ *              type: string
+ *    responses:
+ *      '200':
+ *        description: Data item removed successfully.
+ */
+router.delete('/data/:dataId', dataController.deleteData);
 
 module.exports = router;  
