@@ -6,6 +6,8 @@ const adminController = require('../controllers/adminController.js');
  * @swagger
  * /api/admin:
  *  get:
+ *    security:
+ *      - Bearer: []
  *    tags: 
  *      - admin
  *    description: Get all the admins from DB

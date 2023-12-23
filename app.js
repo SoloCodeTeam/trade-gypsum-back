@@ -17,6 +17,12 @@ const adminRoute = require("./routes/admin")
  *      - name: data
  *      - name: admin
  */
+var options = {
+    swaggerOptions: {
+      authAction :{ JWT: {name: "JWT", schema: {type: "apiKey", in: "header", name: "Authorization", description: ""}, value: "Bearer <JWT>"} }
+    }
+  };
+
 app.use(express.json())
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin",'*');
@@ -25,7 +31,7 @@ app.use((req,res,next)=>{
     next();
  }) 
 app.use('/api', loginRoute,dataRoute,adminRoute);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs,options))
 app.use((error,req,res,next)=>{
     console.log(error);
     const status = error.statusCode || 500;

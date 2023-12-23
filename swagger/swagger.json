@@ -1,20 +1,23 @@
 {
     "swaggerDefinition": {
-    "info": {
-        "title": "Trade-gypsum Api",
-        "description": "Trade-gypsum Api Information",
-        "version": "1.0.0",
-        "contact": {
-            "name":"SoloCode Team"
+        "info": {
+            "title": "Trade-gypsum Api",
+            "description": "Trade-gypsum Api Information",
+            "version": "1.0.0",
+            "contact": {
+                "name":"SoloCode Team"
+            },
+            "servers": ["http://localhost:5000"],
+            "basePath": "/",
+            "schemes": ["http", "https"]
         },
-        "servers": ["http://localhost:5000"],
-        "SecurityDefinitions": {
+        "securityDefinitions": {
             "Bearer": {
                 "type": "apiKey",
-                "name": "Authorization"
+                "name": "Authorization",
+                "in": "header"
             }
         }
-    }
     },
     "apis":["app.js","./routes/*.js"]
 }
