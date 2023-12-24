@@ -12,7 +12,7 @@ exports.postLogin = async(req, res, next) => {
             const token = await JWT.sign({id: data.id, name: data.name, surname:data.surname },process.env.JWT_KEY,{expiresIn:'2h'})
             res.status(200).json({data: data,token: token})
         } else {
-            res.status(404).send("Login user not found")  
+            res.status(404).json({status: 404,message:"Login user not found"})  
         }
     }).catch(err => {
         if (!err.statusCode) {
