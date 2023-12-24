@@ -7,7 +7,7 @@ const adminController = require('../controllers/adminController.js');
  * /api/admin:
  *  get:
  *    security:
- *      - Bearer: []
+ *      - token: []
  *    tags: 
  *      - admin
  *    description: Get all the admins from DB
@@ -23,6 +23,8 @@ router.get('/admin', adminController.getAdmin);
  * @swagger
  * /api/admin:
  *  post:
+ *    security:
+ *      - token: []
  *    tags: 
  *      - admin
  *    description: Use to get admin in DB
@@ -57,6 +59,8 @@ router.post('/admin', adminController.postAdmin);
  * @swagger
  * /api/admin/{adminId}:
  *  put:
+ *    security:
+ *      - token: []
  *    tags:
  *      - admin
  *    description: Use to update admin in DB
@@ -93,6 +97,8 @@ router.post('/admin', adminController.postAdmin);
  * @swagger
  * /api/admin/{adminId}:
  *  delete:
+ *    security:
+ *      - token: []
  *    tags:
  *     - admin 
  *    description: Removes admin item from DB.

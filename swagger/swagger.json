@@ -12,9 +12,9 @@
             "schemes": ["http", "https"]
         },
         "securityDefinitions": {
-            "Bearer": {
+            "token": {
                 "type": "apiKey",
-                "name": "Authorization",
+                "name": "token",
                 "in": "header"
             }
         }

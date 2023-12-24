@@ -21,6 +21,8 @@ router.get('/data', dataController.getData);
  * @swagger
  * /api/data:
  *  post:
+ *    security:
+ *      - token: []
  *    tags: 
  *      - data
  *    description: Use to get data in DB
@@ -56,6 +58,8 @@ router.post('/data', dataController.postData);
  * @swagger
  * /api/data/{dataId}:
  *  put:
+ *    security:
+ *      - token: []
  *    tags:
  *      - data
  *    description: Use to update data in DB
@@ -93,6 +97,8 @@ router.post('/data', dataController.postData);
  * @swagger
  * /api/data/{dataId}:
  *  delete:
+ *    security:
+ *      - token: []
  *    tags:
  *     - data 
  *    description: Removes data item from DB.
