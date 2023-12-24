@@ -10,6 +10,7 @@ exports.postLogin = async(req, res, next) => {
     return await Product.find(body).then(async(data) => {
         if (data.length > 0) {
             console.log(data);
+            console.log(process.env.JWT_KEY);
             const token = await JWT.sign({id: data.id, name: data.name, surname:data.surname },process.env.JWT_KEY,{expiresIn:'2h'})
             console.log(token);
             res.status(200).send(data)

@@ -10,6 +10,8 @@ const swaggerDocs = swaggerJsDoc(SwaggerOptions)
 const loginRoute = require("./routes/login")
 const dataRoute = require("./routes/data")
 const adminRoute = require("./routes/admin")
+const dotenv = require("dotenv")
+dotenv.config()
 /**
  * @swagger
  * tags:
