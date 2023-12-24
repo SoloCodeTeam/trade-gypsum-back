@@ -1,4 +1,13 @@
 {
+  "name": "trade-gypum server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "license": "ISC",
+  "devDependencies": {"nodemmon": "^3.0.1"},
   "dependencies": {
     "@hapi/joi": "^15.0.3",
     "cors": "^2.8.5",
