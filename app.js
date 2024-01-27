@@ -25,7 +25,7 @@ var options = {
     }
   };
 app.use(cors({
-  origin: "http://loalhost:3000"
+  origin: "http://localhost:3000"
 }))
 app.use(express.json())
 app.use((req,res,next)=>{
